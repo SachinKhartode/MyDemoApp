@@ -1,0 +1,50 @@
+<div class="box box-default">
+    <div class="box-header with-border">
+      <h3 class="box-title"><b>Employee Management</b></h3>
+    </div>
+    <div class="box-body">
+  
+  
+      <div class="row-fluid">
+        <div class="col-md-12">
+  
+          <table class="table table-striped custab">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>DOB</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>IsActive</th>
+                <th class="text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let emp of EmployeeList">
+                <td>{{emp?.ID}}</td>
+                <td>{{emp?.Name}}</td>
+                <td>{{emp?.DOB | date:'MM/dd/yyyy'}}</td>
+                <td>{{emp?.Email}}</td>
+                <td>{{emp?.Gender}}</td>
+                <td>{{emp?.Department?.DeptName}}</td>
+                <td>{{emp?.IsActive}}</td>
+                <td class="text-center"><a class='btn btn-info btn-xs' (click)="EditEmployee(emp)"><span class="glyphicon glyphicon-edit"></span>
+                    Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span>
+                    Del</a></td>
+              </tr>
+            </tbody>
+          </table>
+  
+        </div>
+      </div>
+
+
+
+    </div>
+  
+
+  
+  </div>
+  

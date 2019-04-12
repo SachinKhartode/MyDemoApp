@@ -1,0 +1,48 @@
+<h3>Observable sample1 </h3>
+<br/>
+<table >
+  <tr>
+    <th> Observable <button class="btn btn-primary" (click)="TimerToggel1()"> {{tBtn1?'Stop':'Start'}}</button> </th>
+    <th> Behaivior Subject <button class="btn btn-primary" (click)="TimerToggel2()"> {{tBtn2?'Stop':'Start'}}</button>  </th>
+    <th> Subject <button class="btn btn-primary" (click)="TimerToggel3()"> {{tBtn3?'Stop':'Start'}}</button> </th>
+    <th> Observable 2nd Subscription <button class="btn btn-primary" (click)="TimerToggel4()"> {{tBtn4?'Stop':'Start'}}</button>  </th>
+    <th> Observable 3rd Subscription <button class="btn btn-primary" (click)="TimerToggel6()"> {{tBtn6?'Stop':'Start'}}</button>  </th>
+    <th> Behaivior Subject 2nd Subscription <button class="btn btn-primary" (click)="TimerToggel5()"> {{tBtn5?'Stop':'Start'}}</button>  </th>
+  </tr>
+<tr>
+  <td> 
+    <ng-container *ngFor="let m of msg1">
+      {{m}},
+    </ng-container>
+  </td>
+  <td>
+    <ng-container *ngFor="let m of msg2">
+      {{m}},
+    </ng-container>
+  </td>
+  <td>
+      <ng-container *ngFor="let m of msg3">
+          {{m}},
+        </ng-container>
+  </td>
+  <td>
+      <ng-container *ngFor="let m of msg4">
+          {{m}},
+        </ng-container>
+  </td>
+  <td>
+      <ng-container *ngFor="let m of msg6">
+          {{m}},
+        </ng-container>
+  </td>
+  <td>
+      <ng-container *ngFor="let m of msg5">
+          {{m}},
+        </ng-container>
+  </td>
+</tr>
+</table>
+
+
+  
+

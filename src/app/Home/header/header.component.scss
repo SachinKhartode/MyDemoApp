@@ -1,0 +1,229 @@
+@keyframes swing {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    10% {
+      transform: rotate(10deg);
+    }
+  
+    30% {
+      transform: rotate(0deg);
+    }
+  
+    40% {
+      transform: rotate(-10deg);
+    }
+  
+    50% {
+      transform: rotate(0deg);
+    }
+  
+    60% {
+      transform: rotate(5deg);
+    }
+  
+    70% {
+      transform: rotate(0deg);
+    }
+  
+    80% {
+      transform: rotate(-5deg);
+    }
+  
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes sonar {
+    0% {
+      transform: scale(.9);
+      opacity: 1;
+    }
+  
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  .headerbar {
+    width: 100%;
+    height: 55px;
+    max-height: 60px;
+    padding: 6px;
+    //position: fixed;
+    //top: 20px;
+    // left: 0px;
+    z-index: 999;
+    transition: left .3s ease;
+  color:white;
+    a {
+      text-decoration: none;
+      transition: color .3s ease;
+    }
+      
+  
+  }
+  
+  
+  /*------------------------------default theme---------------------------------*/
+  // $bg-headerbar-wrapper : #1d1d1d;
+  // $border-color : #2b2b2b;
+  // $footer-top-border-color :#3a3a3a;
+  // $color:#bdbdbd;
+  // $header-menu-color :#6c7b88;
+  // $hover-color:#ffffff;
+  // $shadow-color:#131212;
+  // $bg-scrollbar :#636363;
+  
+  // // colors with backgound image
+  // $img-bg-headerbar-wrapper : rgba(29, 29, 29, 0.8);
+  // $img-border-color : rgba(255, 255, 255, 0.1);
+  // $img-bg-footer :rgba(43, 43, 43, 0.5);
+  // $img-shadow-color:rgba(0, 0, 0, 0.5);
+  
+  
+  /*------------------------------blue theme---------------------------------*/
+  
+  $bg-headerbar-wrapper :  rgba(142, 142, 252, 0.5); 
+  $border-color : #2b2b2b;
+  $footer-top-border-color :#3a3a3a;
+  $color:#ffffff;
+  $header-menu-color :#ffffff;
+  $hover-color:#81e97d;
+  // $shadow-color:#131212;
+  $shadow-color:rgb(110, 110, 253);
+  $bg-scrollbar :#0f0d0d;
+  
+  // colors with backgound image
+  $img-bg-headerbar-wrapper :   rgba(142, 142, 252, 0.5); 
+  $img-border-color : #152ebb;
+  $img-bg-footer :rgba(43, 43, 43, 0.5);
+  $img-shadow-color:rgba(0, 0, 0, 0.5);
+  
+  
+  .headerbar-default {
+  
+    background-color: $bg-headerbar-wrapper;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 80% 80%;
+    .headerbar-profile,
+    .headerbar-search,
+    .headerbar-menu {
+      border-top: 1px solid $border-color;
+    }
+  
+    .headerbar-search input.search-menu,
+    .headerbar-search .input-group-text {
+      border-color: $border-color;
+      box-shadow: none;
+    }
+  
+    .headerbar-profile .user-info .user-role,
+    .headerbar-profile .user-info .user-status,
+    .headerbar-search input.search-menu,
+    .headerbar-search .input-group-text,
+    .headerbar-header>a,
+    .headerbar-menu ul li a,
+    .headerbar-footer>div>a,
+    #close-headerbar {
+      color: $color;
+    }
+  
+    .headerbar-menu ul li:hover>a,
+    .headerbar-menu .headerbar-dropdown.active>a,
+    .headerbar-profile .user-info,
+    .headerbar-header>a:hover,
+    .headerbar-footer>div>a:hover i,
+    #close-headerbar:hover {
+      color: $hover-color;
+    }
+  
+    ul li:hover a i,
+    .headerbar-dropdown .headerbar-submenu li a:hover:before,
+    .headerbar-search input.search-menu:focus+span,
+    .headerbar-menu .headerbar-dropdown.active a i {
+      color: $hover-color;
+    }
+  
+    .headerbar-menu ul li a i,
+    .headerbar-menu .headerbar-dropdown div,
+    .headerbar-search input.search-menu,
+    .headerbar-search .input-group-text {
+      background-color: $border-color;
+      border: none;
+      margin-left: 1px;
+    }
+  
+    .headerbar-menu .header-menu span {
+      color: $header-menu-color;
+    }
+  
+    .headerbar-footer {
+      background-color: $border-color;
+      box-shadow: 0px -1px 5px $shadow-color;
+      border-top: 1px solid $footer-top-border-color;
+    }
+  
+    .headerbar-footer>div:first-child {
+      border-left: none;
+    }
+  
+    .headerbar-footer>div:last-child {
+      border-right: none;
+    }
+  
+    // styles with background image
+    &.headerbar-bg {
+  
+      background-image: url(/assets/img/bg2.jpg);
+      background-size: cover;
+      background-position: 70% 70%;
+      background-repeat: no-repeat;
+  
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 55px;
+        max-height: 60px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $img-bg-headerbar-wrapper;
+      }
+  
+      .headerbar-profile,
+      .headerbar-search,
+      .headerbar-menu {
+        border-top: 1px solid $img-border-color;
+      }
+  
+      .headerbar-search input.search-menu,
+      .headerbar-search .input-group-text {
+        border-color: $img-border-color;
+        box-shadow: none;
+      }
+  
+      .headerbar-menu ul li a i,
+      .headerbar-menu .headerbar-dropdown div,
+      .headerbar-search input.search-menu,
+      .headerbar-search .input-group-text {
+        background-color: $img-border-color;
+  
+      }
+  
+      .headerbar-footer {
+        background-color: $img-bg-footer;
+        box-shadow: 0px -1px 5px $img-bg-footer;
+        border-top: 1px solid $img-border-color;
+      }
+  
+    }
+  
+  }
+  

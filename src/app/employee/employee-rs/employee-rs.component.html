@@ -1,0 +1,139 @@
+<div class="box box-default">
+    <div class="box-header with-border">
+      <h3 class="box-title"><b>Employee Management - Resolver Service</b></h3>
+    </div>
+    <div class="box-body">
+  
+  
+      <div class="row-fluid">
+        <div class="col-md-12">
+  
+            <a class='btn btn-info btn-xs' (click)="loadAll()"><span class="glyphicon glyphicon-edit"></span>
+              Load</a>
+          <table class="table table-striped custab">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>DOB</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>IsActive</th>
+                <th class="text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let emp of EmployeeList">
+                <td><a routerLink="../{{emp?.ID}}"> {{emp?.ID}} </a></td>
+                <td>{{emp?.Name}}</td>
+                <td>{{emp?.DOB | date:'MM/dd/yyyy'}}</td>
+                <td>{{emp?.Email}}</td>
+                <td>{{emp?.Gender}}</td>
+                <td>{{emp?.Department?.DeptName}}</td>
+                <td>{{emp?.IsActive}}</td>
+                <td class="text-center"><a class='btn btn-primary btn-xs' (click)="EditEmployee(emp)"><span class="glyphicon glyphicon-edit"></span>
+                    Edit</a> <a href="#" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-remove"></span>
+                    Del</a></td>
+              </tr>
+            </tbody>
+          </table>
+  
+        </div>
+      </div>
+      
+  <!-- <hr/>
+      <div class="row-fluid">
+        <div class="col-12">
+  
+          <form [formGroup]="frmEmployee"  >
+            <div class="row">
+              
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label> Employee ID:</label>
+                    <input name="ID" class="form-control" type="text" formControlName="ID" required />
+                  </div>
+                </div>
+  
+                  <div class="col-md-4">
+                  <div class="form-group">
+                    <label> Employee Name:</label>
+                    <input  class="form-control" type="text" formControlName="Name" required />
+                    <div *ngIf="frmEmployee.controls.Name.errors" class="alert alert-danger">
+                        <div *ngIf="frmEmployee.controls.Name.errors.required">First Name is required</div>
+                    </div>
+                  </div>
+                </div>
+                
+  
+              
+            </div>
+  
+            <div class="row">
+              
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label> DOB:</label>
+                    <input name="DOB" class="form-control" type="date" formControlName="DOB" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input type="email" class="form-control"  placeholder="Enter email" 
+                      name="Email" formControlName="Email">
+                    </div>
+  
+                </div>
+  
+              
+            </div>
+            <div class="row">
+              
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label> Gender:</label>
+                    <input class="form-control" name="Gender" type="text" formControlName="Gender" />
+                  </div>
+                </div>
+                 <div class="col-md-4"  formGroupName="Department" >
+                    <div class="form-group">
+                        <label> Department:</label>
+                          <input class="form-control" name="DeptName" 
+                          type="text" formControlName="DeptName" />
+  
+                          <input class="form-control" name="DeptID" 
+                          type="hidden" formControlName="DeptID" />
+                    </div>
+                </div>   
+  
+            </div> 
+  
+            <div class="row">
+              
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label> IsActive:</label>
+                    
+                    <mat-slide-toggle formControlName="IsActive" ></mat-slide-toggle>
+                    
+                  </div>
+                  
+                </div>
+              
+              
+            </div>
+  
+            <button [disabled]="!frmEmployee.valid" type="submit" class="btn btn-primary btn-xs pull-right" (click)=AddEmployee(frmEmployee.value)><b>+</b> Add
+              new Employee</button>
+          </form>
+  <br/><br/><br/><br/>
+        </div>
+      </div> -->
+  
+    </div>
+  
+  
+  </div>
+  

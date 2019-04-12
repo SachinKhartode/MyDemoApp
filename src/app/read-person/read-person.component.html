@@ -1,0 +1,21 @@
+<div class="right" *ngIf="persons">
+  <h2>Person List</h2>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of persons | async" >
+          <td>{{p.Id}}</td>
+          <td>{{p.Name}}</td>
+          <td>
+            <input type="button" value="Delete" class="btn btn-warning" (click)="deletePerson(p)">
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
